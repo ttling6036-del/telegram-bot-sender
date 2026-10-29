@@ -1,1 +1,21 @@
-name: Send Every 3 Hourson:  schedule:    - cron: '0 */3 * * *'  workflow_dispatch:jobs:  send:    runs-on: ubuntu-latest    steps:      - uses: actions/checkout@v4      - uses: actions/setup-python@v5        with:          python-version: '3.11'      - run: pip install requests      - run: python send_to_group.py -1001658566252
+name: Send Album to Group JB (Every 3 Hours)
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'   # 每3小时（UTC）
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - name: Send album to Group JB
+        run: python send_album.py -1001658566252 9243017787:AAFrv8Xc4T8ZKcLG-KeAV-u9Wdqb_i2mDZw
