@@ -1,6 +1,6 @@
 """
-Telegram 相册发送（GitHub Actions 版）
-用法：python send_album.py <群ID>
+Telegram 通用相册发送（GitHub Actions 版）
+用法：python send_album.py <群ID> <BotToken>
 两张图以相册形式（同一条消息）一起发，带完整文案。
 """
 
@@ -9,8 +9,6 @@ import requests
 import json
 
 # ============ 配置 ============
-BOT_TOKEN = "9015499752:AAE63es_CeMirbJ2RWVAFTPsxqT9GBX9ZWk"
-
 # 图片放在仓库根目录，用 raw 直链（GitHub 服务器上的图片，Telegram 可直接拉取）
 REPO_RAW = "https://raw.githubusercontent.com/ttling6036-del/telegram-bot-sender/main"
 IMAGE_URLS = [
@@ -39,8 +37,8 @@ https://tinyurl.com/3t45kr8u
 # ================================
 
 
-def send_album(chat_id):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMediaGroup"
+def send_album(bot_token, chat_id):
+    url = f"https://api.telegram.org/bot{bot_token}/sendMediaGroup"
     media = []
     for i, img_url in enumerate(IMAGE_URLS):
         item = {"type": "photo", "media": img_url}
@@ -53,12 +51,13 @@ def send_album(chat_id):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("用法: python send_album.py <群ID>")
+    if len(sys.argv) < 3:
+        print("用法: python send_album.py <群ID> <BotToken>")
         sys.exit(1)
 
     chat_id = sys.argv[1]
-    result = send_album(chat_id)
+    bot_token = sys.argv[2]
+    result = send_album(bot_token, chat_id)
 
     if result.get("ok"):
         print(f"[✓] {chat_id} 相册发送成功")
