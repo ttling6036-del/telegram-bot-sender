@@ -1,0 +1,21 @@
+name: Send Album to Winbox (Every 8 Hours)
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'   # 每8小时的第0分钟（UTC）
+  workflow_dispatch:          # 允许手动运行测试
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - name: Send album to Winbox group
+        run: python send_album.py -1004300324287
