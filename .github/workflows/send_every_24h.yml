@@ -1,1 +1,21 @@
-name: Send Every 24 Hourson:  schedule:    - cron: '0 0 * * *'  workflow_dispatch:jobs:  send:    runs-on: ubuntu-latest    steps:      - uses: actions/checkout@v4      - uses: actions/setup-python@v5        with:          python-version: '3.11'      - run: pip install requests      - run: python send_to_group.py -1004488005787
+name: Send Album to Malaysia (Every 24 Hours)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'     # 每天UTC 0点（马来西亚时间8点）
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - name: Send album to Malaysia group
+        run: python send_album.py -1004488005787 9243017787:AAFrv8Xc4T8ZKcLG-KeAV-u9Wdqb_i2mDZw
