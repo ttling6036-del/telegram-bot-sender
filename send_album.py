@@ -18,7 +18,7 @@ IMAGE_URLS = [
 MESSAGE_TEXT = """✅Winbox✅ tekan link di Bawah sekarang!!!Register ⬇⬇⬇
 https://tinyurl.com/3t45kr8u
 
-🔥Monkey King【Misi Mingguan Telah Hadir! Menangkan Angpao Keberuntungan!】🧧🎉
+**🔥Monkey King【Misi Mingguan Telah Hadir! Menangkan Angpao Keberuntungan!】🧧🎉**
 
 🎮 Selesaikan misi mingguan untuk kesempatan memenangkan Angpao Keberuntungan hingga 8,888! Setiap minggu adalah peluang baru untuk menjadi salah satu pemenang beruntung!
 
@@ -34,7 +34,7 @@ https://tinyurl.com/3t45kr8u
 
 #MonkeyKing #MisiMingguan #AngpaoKeberuntungan #HadiahAngpao #FootballKing #DragonXMahjong #SuperAcePlus #Iceland #GreatBlue #FairyGardenPlus #SlotGames
 
-**🧧 ALADDIN
+**🧧 ALADDIN 
 https://tinyurl.com/Aladdin2222
 
 📱❤️ Telegram 😀😀
