@@ -9,7 +9,6 @@ import requests
 import json
 
 # ============ 配置 ============
-# 图片放在仓库根目录，用 raw 直链（GitHub 服务器上的图片，Telegram 可直接拉取）
 REPO_RAW = "https://raw.githubusercontent.com/ttling6036-del/telegram-bot-sender/main"
 IMAGE_URLS = [
     f"{REPO_RAW}/img1.jpg",
@@ -33,9 +32,14 @@ https://tinyurl.com/3t45kr8u
 
 🚀 Ikuti tantangannya dan mulai perjalanan Angpao Keberuntungan Anda hari ini!
 
-#MonkeyKing #MisiMingguan #AngpaoKeberuntungan #HadiahAngpao #FootballKing #DragonXMahjong #SuperAcePlus #Iceland #GreatBlue #FairyGardenPlus #SlotGames"""
-# ================================
+#MonkeyKing #MisiMingguan #AngpaoKeberuntungan #HadiahAngpao #FootballKing #DragonXMahjong #SuperAcePlus #Iceland #GreatBlue #FairyGardenPlus #SlotGames
 
+**🧧 ALADDIN
+https://tinyurl.com/Aladdin2222
+
+📱❤️ Telegram 😀😀
+https://t.me/winbox8886"""
+# ================================
 
 def send_album(bot_token, chat_id):
     url = f"https://api.telegram.org/bot{bot_token}/sendMediaGroup"
@@ -49,22 +53,18 @@ def send_album(bot_token, chat_id):
     r = requests.post(url, data=data, timeout=60)
     return r.json()
 
-
 def main():
     if len(sys.argv) < 3:
         print("用法: python send_album.py <群ID> <BotToken>")
         sys.exit(1)
-
     chat_id = sys.argv[1]
     bot_token = sys.argv[2]
     result = send_album(bot_token, chat_id)
-
     if result.get("ok"):
         print(f"[✓] {chat_id} 相册发送成功")
     else:
         print(f"[✗] {chat_id} 失败: {result.get('description')}")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
