@@ -28,7 +28,10 @@ https://tinyurl.com/3t45kr8u
 #MonkeyKing #MisiMingguan #AngpaoKeberuntungan #HadiahAngpao #FootballKing #DragonXMahjong #SuperAcePlus #Iceland #GreatBlue #FairyGardenPlus #SlotGames
 
 **🧧 ALADDIN
-https://tinyurl.com/Aladdin2222"""
+https://tinyurl.com/Aladdin2222
+
+📱❤️ Telegram 😀😀
+https://t.me/winbox8886"""
 
 def send_album(bot_token, chat_id):
     url = f"https://api.telegram.org/bot{bot_token}/sendMediaGroup"
