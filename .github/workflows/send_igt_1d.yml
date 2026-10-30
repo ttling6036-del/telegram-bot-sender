@@ -1,0 +1,16 @@
+name: Send Album to IGT (Daily)
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python send_album_aladdin.py -1002662798451 9015499752:AAE63es_CeMirbJ2RWVAFTPsxqT9GBX9ZWk
